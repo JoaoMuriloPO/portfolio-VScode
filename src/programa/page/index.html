@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Murilo Pereira de Oliveira - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="icon" type="image/png" href="https://code.visualstudio.com/favicon.ico">
+
+</head>
+
+<body>
+    <!-- VSCode Title Bar -->
+    <div class="title-bar">
+        <div class="title-bar-left">
+            <div class="window-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+        </div>
+        <div class="title-bar-center">
+            <span>João Murilo Pereira de Oliveira - Portfolio - Visual Studio Code</span>
+        </div>
+        <div class="title-bar-right"></div>
+    </div>
+
+    <!-- VSCode Menu Bar -->
+    <div class="menu-bar">
+        <span class="menu-item">File</span>
+        <span class="menu-item">Edit</span>
+        <span class="menu-item">View</span>
+        <span class="menu-item">Go</span>
+        <span class="menu-item">Run</span>
+        <span class="menu-item">Terminal</span>
+        <span class="menu-item">Help</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">EXPLORER</div>
+                <div class="sidebar-actions">
+                    <span class="action-icon">⋯</span>
+                </div>
+            </div>
+
+            <div class="file-explorer">
+                <div class="folder-section">
+                    <div class="folder-header" onclick="toggleFolder('portfolio')">
+                        <span class="folder-icon">📁</span>
+                        <span class="folder-name">PORTFOLIO</span>
+                    </div>
+                    <div class="folder-content" id="portfolio">
+                        <div class="file-item active" onclick="openTab('home', 'README.md')">
+                            <span class="file-icon">📄</span>
+                            <span class="file-name">README.md</span>
+                        </div>
+                        <div class="file-item" onclick="openTab('about', 'about.html')">
+                            <span class="file-icon">🌐</span>
+                            <span class="file-name">about.html</span>
+                        </div>
+                        <div class="file-item" onclick="openTab('skills', 'skills.js')">
+                            <span class="file-icon">📜</span>
+                            <span class="file-name">skills.js</span>
+                        </div>
+                        <div class="file-item" onclick="openTab('projects', 'projects.json')">
+                            <span class="file-icon">📋</span>
+                            <span class="file-name">projects.json</span>
+                        </div>
+                        <div class="file-item" onclick="openTab('experience', 'experience.tsx')">
+                            <span class="file-icon">💼</span>
+                            <span class="file-name">experience.tsx</span>
+                        </div>
+                        <div class="file-item" onclick="openTab('contact', 'contact.css')">
+                            <span class="file-icon">🎨</span>
+                            <span class="file-name">contact.css</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <!-- Tab Bar -->
+        <!-- Tab Bar -->
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <div class="tab active" id="tab-home">
+            <span class="tab-icon">📄</span>
+            <span class="tab-name">README.md</span>
+            <span class="tab-close" onclick="closeTab('home')">×</span>
+        </div>
+    </div>
+
+            <!-- Content -->
+            <div class="editor-content">
+                <!-- Home/README Content -->
+                <div class="tab-content active" id="content-home">
+                    <div class="markdown-content">
+                        <h1># João Murilo Pereira de Oliveira - Desenvolvedor Front-End</h1>
+
+                        <div class="profile-section">
+                            <div class="profile-image">
+                                <img src="../../assets/perfil.jpeg" alt="João Murilo Pereira de Oliveira" />
+                            </div>
+                            <div class="profile-info">
+                                <h2>## Olá! 👋</h2>
+                                <p>Bem-vindo ao meu portfólio! Sou um desenvolvedor Front-End com mais de 1 ano e 4
+                                    meses de experiência prática, incluindo 8 meses de estágio em desenvolvimento web.
+                                </p>
+
+                                <h3>### 🚀 Sobre mim</h3>
+                                <p>Atuo principalmente com ReactJS e Node.js, desenvolvendo interfaces dinâmicas,
+                                    integrações com APIs e aplicações completas. Tenho familiaridade com metodologias
+                                    ágeis (Daily, Planning, Review/Demo), consumo de APIs REST, e colaboração em times
+                                    multidisciplinares.</p>
+
+                                <h3>### 💼 Experiência</h3>
+                                <ul>
+                                    <li>1 ano e 4 meses de experiência em desenvolvimento web</li>
+                                    <li>8 meses de estágio na CI&T</li>
+                                    <li>Experiência com ReactJS, TypeScript, Node.js</li>
+                                    <li>Integração com APIs REST (Kanbanize)</li>
+                                    <li>Metodologias ágeis (Scrum)</li>
+                                </ul>
+
+                                <h3>### 🎓 Formação</h3>
+                                <p>Tecnólogo em Redes de Computadores - IFRJ (2024-2027)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Content -->
+                <div class="tab-content" id="content-about">
+                    <div class="code-content">
+                        <div class="line-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                        </div>
+                        <div class="code-text">
+                            <span class="tag">&lt;!DOCTYPE <span class="attribute">html</span>&gt;</span><br>
+                            <span class="tag">&lt;html <span class="attribute">lang</span>=<span
+                                    class="string">"pt-BR"</span>&gt;</span><br>
+                            <span class="tag">&lt;head&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span>Sobre João Murilo<span
+                                class="tag">&lt;/title&gt;</span><br>
+                            <span class="tag">&lt;/head&gt;</span><br>
+                            <span class="tag">&lt;body&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h1&gt;</span>João Murilo Pereira de
+                            Oliveira<span class="tag">&lt;/h1&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Desenvolvedor Front-End apaixonado
+                            por tecnologia<span class="tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>e inovação, com foco em ReactJS e
+                            Node.js.<span class="tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Localização: Rio de Janeiro -
+                            RJ<span class="tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Experiência com metodologias
+                            ágeis,<span class="tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>integração de APIs e
+                            desenvolvimento<span class="tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>de interfaces responsivas e
+                            escaláveis.<span class="tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Sempre em busca de novos
+                            desafios!<span class="tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>Objetivo: Full Stack
+                            Developer<span class="tag">&lt;/p&gt;</span><br>
+                            <span class="tag">&lt;/body&gt;</span><br>
+                            <span class="tag">&lt;/html&gt;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Content -->
+                <div class="tab-content" id="content-skills">
+                    <div class="code-content">
+                        <div class="line-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+                            <span>21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24</span>
+                        </div>
+                        <div class="code-text">
+                            <span class="keyword">const</span> <span class="variable">skills</span> = {<br>
+                            &nbsp;&nbsp;<span class="property">frontend</span>: [<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ReactJS"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"TypeScript"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"JavaScript"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Angular"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"HTML5"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"CSS3"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"JSX"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"TSX"</span><br>
+                            &nbsp;&nbsp;],<br>
+                            &nbsp;&nbsp;<span class="property">backend</span>: [<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Node.js"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Express"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"APIs REST"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Python"</span><br>
+                            &nbsp;&nbsp;],<br>
+                            &nbsp;&nbsp;<span class="property">tools</span>: [<span class="string">"Git"</span>, <span
+                                class="string">"GitHub"</span>, <span class="string">"Docker"</span>, <span
+                                class="string">"Postman"</span>],<br>
+                            &nbsp;&nbsp;<span class="property">methodologies</span>: [<span
+                                class="string">"Scrum"</span>, <span class="string">"Kanban"</span>],<br>
+                            &nbsp;&nbsp;<span class="property">languages</span>: [<span class="string">"Português
+                                (Nativo)"</span>, <span class="string">"Inglês (B1)"</span>]<br>
+                            };<br>
+                            <br>
+                            <span class="keyword">export</span> <span class="keyword">default</span> <span
+                                class="variable">skills</span>;
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Content -->
+                <div class="tab-content" id="content-projects">
+                    <div class="code-content">
+                        <div class="line-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+                            <span>21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24</span>
+                            <span>25</span>
+                            <span>26</span>
+                            <span>27</span>
+                            <span>28</span>
+                            <span>29</span>
+                            <span>30</span>
+                        </div>
+                        <div class="code-text">
+                            {<br>
+                            &nbsp;&nbsp;<span class="property">"projects"</span>: [<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"name"</span>: <span
+                                class="string">"Kanban API Integration"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"description"</span>: <span
+                                class="string">"Integração com API do Kanbanize para gerenciamento de
+                                tarefas"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"tech"</span>: [<span
+                                class="string">"ReactJS"</span>, <span class="string">"TypeScript"</span>, <span
+                                class="string">"API REST"</span>],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"status"</span>: <span
+                                class="string">"completed"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"name"</span>: <span
+                                class="string">"Portfólio Pessoal"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"description"</span>: <span
+                                class="string">"Site responsivo desenvolvido com ReactJS e Vite"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"tech"</span>: [<span
+                                class="string">"ReactJS"</span>, <span class="string">"Vite"</span>, <span
+                                class="string">"CSS3"</span>],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"status"</span>: <span
+                                class="string">"completed"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"name"</span>: <span
+                                class="string">"Bot para Discord"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"description"</span>: <span
+                                class="string">"Ferramenta automatizada para gerenciamento de comunidades"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"tech"</span>: [<span
+                                class="string">"Node.js"</span>, <span class="string">"JavaScript"</span>, <span
+                                class="string">"Discord.js"</span>],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"status"</span>: <span
+                                class="string">"completed"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"name"</span>: <span
+                                class="string">"E-commerce Projects"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"description"</span>: <span
+                                class="string">"Desenvolvimento de interfaces para e-commerce"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"tech"</span>: [<span
+                                class="string">"ReactJS"</span>, <span class="string">"TypeScript"</span>, <span
+                                class="string">"CSS3"</span>],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">"status"</span>: <span
+                                class="string">"freelance"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;]<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Content -->
+                <div class="tab-content" id="content-experience">
+                    <div class="code-content">
+                        <div class="line-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+                            <span>21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24</span>
+                            <span>25</span>
+                        </div>
+                        <div class="code-text">
+                            <span class="keyword">interface</span> <span class="variable">Experience</span> {<br>
+                            &nbsp;&nbsp;<span class="property">position</span>: <span class="keyword">string</span>;<br>
+                            &nbsp;&nbsp;<span class="property">company</span>: <span class="keyword">string</span>;<br>
+                            &nbsp;&nbsp;<span class="property">period</span>: <span class="keyword">string</span>;<br>
+                            &nbsp;&nbsp;<span class="property">responsibilities</span>: <span
+                                class="keyword">string[]</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="keyword">const</span> <span class="variable">experience</span>: <span
+                                class="variable">Experience[]</span> = [<br>
+                            &nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">position</span>: <span
+                                class="string">"Estagiário em Desenvolvimento Front-End"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">company</span>: <span
+                                class="string">"CI&T"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">period</span>: <span class="string">"março
+                                2025 – Presente"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">responsibilities</span>: [<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Desenvolvimento com ReactJS,
+                                TypeScript, Node.js"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Integração com APIs REST
+                                (Kanbanize)"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Metodologias ágeis
+                                (Scrum)"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Projetos com IA e
+                                automações"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;]<br>
+                            &nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">position</span>: <span
+                                class="string">"Freelancer em Desenvolvimento Web"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">company</span>: <span
+                                class="string">"Autônomo"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">period</span>: <span class="string">"Outubro
+                                2024 – Dezembro 2024"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">responsibilities</span>: [<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Criação de interfaces e páginas de
+                                login"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Portfólios corporativos e
+                                E-commerces"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Bots para Discord"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;]<br>
+                            &nbsp;&nbsp;}<br>
+                            ];
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Content -->
+                <div class="tab-content" id="content-contact">
+                    <div class="code-content">
+                        <div class="line-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+                            <span>21</span>
+                            <span>22</span>
+                        </div>
+                        <div class="code-text">
+                            <span class="selector">.contact-info</span> {<br>
+                            &nbsp;&nbsp;<span class="property">display</span>: <span class="value">flex</span>;<br>
+                            &nbsp;&nbsp;<span class="property">flex-direction</span>: <span
+                                class="value">column</span>;<br>
+                            &nbsp;&nbsp;<span class="property">gap</span>: <span class="value">20px</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="selector">.contact-item</span> {<br>
+                            &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px</span>;<br>
+                            &nbsp;&nbsp;<span class="property">border</span>: <span class="value">1px solid
+                                #444</span>;<br>
+                            &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">8px</span>;<br>
+                            &nbsp;&nbsp;<span class="property">background</span>: <span
+                                class="value">#2d2d30</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="comment">/* 📧 Email: j.murilo.mobilegmail.com */</span><br>
+                            <span class="comment">/* 📞 Telefone: (21) 98540-5690 */</span><br>
+                            <span class="comment">/* 💼 LinkedIn: linkedin.com/in/joaomurilopoo */</span><br>
+                            <span class="comment">/* 🐙 GitHub: github.com/JoaoMuriloPO */</span><br>
+                            <span class="comment">/* 📍 Localização: Rio de Janeiro - RJ */</span><br>
+                            <br>
+                            <span class="selector">.contact-item:hover</span> {<br>
+                            &nbsp;&nbsp;<span class="property">background</span>: <span
+                                class="value">#404040</span>;<br>
+                            &nbsp;&nbsp;<span class="property">transform</span>: <span
+                                class="value">translateY(-2px)</span>;<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Resize Bar -->
+    <div class="terminal-resize-bar" id="terminalResizeBar"></div>
+
+    <!-- Terminal -->
+    <div class="terminal" id="terminal">
+        <div class="terminal-header">
+            <div class="terminal-tabs">
+                <div class="terminal-tab active">
+                    <span class="terminal-icon">⚡</span>
+                    <span>Terminal</span>
+                </div>
+            </div>
+            <div class="terminal-controls">
+                <button class="terminal-control" onclick="minimizeTerminal()" title="Minimize Terminal">
+                    <span>−</span>
+                </button>
+                <button class="terminal-control" onclick="maximizeTerminal()" title="Maximize Terminal">
+                    <span>□</span>
+                </button>
+                <button class="terminal-control" onclick="closeTerminal()" title="Close Terminal">
+                    <span>×</span>
+                </button>
+            </div>
+        </div>
+        <div class="terminal-content">
+            <div class="terminal-line">
+                <span class="terminal-prompt">joaomurilo@portfolio:~$</span>
+                <span class="terminal-command">npm start</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">✓ Portfolio server started successfully!</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">📧 Email: j.murilo.mobilegmail.com</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">📞 Telefone: (21) 98540-5690</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">💼 LinkedIn: linkedin.com/in/joaomurilopoo</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">🐙 GitHub: github.com/JoaoMuriloPO</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-output">📍 Rio de Janeiro - RJ</span>
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-prompt">joaomurilo@portfolio:~$</span>
+                <span class="terminal-cursor">|</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-left">
+            <span class="status-item">🌿 main</span>
+            <span class="status-item">✓ 0 ⚠ 0 ❌ 0</span>
+        </div>
+        <div class="status-right">
+            <span class="status-item">UTF-8</span>
+            <span class="status-item">LF</span>
+            <span class="status-item">TypeScript React</span>
+            <span class="status-item">🔔</span>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

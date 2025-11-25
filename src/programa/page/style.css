@@ -1,0 +1,1077 @@
+/* Reset e configurações globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Code", "Consolas", "Monaco", monospace;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Title Bar */
+.title-bar {
+  height: 30px;
+  background-color: #323233;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-bottom: 1px solid #2d2d30;
+}
+
+.title-bar-center {
+  font-size: 13px;
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control:hover {
+  transform: scale(1.1);
+}
+
+.control.close {
+  background-color: #ff5f57;
+}
+
+.control.minimize {
+  background-color: #ffbd2e;
+}
+
+.control.maximize {
+  background-color: #28ca42;
+}
+
+/* Menu Bar */
+.menu-bar {
+  height: 35px;
+  background-color: #2d2d30;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 20px;
+  border-bottom: 1px solid #3e3e42;
+}
+
+.menu-item {
+  font-size: 13px;
+  color: #cccccc;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: #3e3e42;
+  color: #ffffff;
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  height: calc(100vh - 65px - 200px - 4px - 22px); /* Altura dinâmica */
+  transition: height 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background-color: #252526;
+  border-right: 1px solid #3e3e42;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-color: #2d2d30;
+  border-bottom: 1px solid #3e3e42;
+  position: relative;
+}
+
+.sidebar-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #007acc, transparent);
+  opacity: 0.5;
+}
+
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+}
+
+/* Melhorias no botão de toggle da sidebar */
+.action-icon {
+  color: #cccccc;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 4px;
+  border-radius: 3px;
+  user-select: none;
+  position: relative;
+}
+
+.action-icon:hover {
+  color: #ffffff;
+  background-color: #3e3e42;
+  transform: scale(1.1);
+}
+
+.action-icon:active {
+  transform: scale(0.95);
+}
+
+/* Animações para a sidebar */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Ajustes para quando a sidebar está escondida */
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  transition: margin-left 0.3s ease;
+}
+
+/* File Explorer */
+.file-explorer {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.folder-section {
+  margin-bottom: 10px;
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.folder-header:hover {
+  background-color: #2a2d2e;
+}
+
+.folder-icon {
+  margin-right: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.folder-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+.folder-content {
+  padding-left: 10px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  border-radius: 3px;
+  margin: 1px 5px;
+}
+
+.file-item:hover {
+  background-color: #2a2d2e;
+  transform: translateX(3px);
+}
+
+.file-item.active {
+  background-color: #094771;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.file-icon {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.file-name {
+  color: #d4d4d4;
+  transition: color 0.2s ease;
+}
+
+.file-item.active .file-name {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Tab Bar */
+.tab-bar {
+  height: 35px;
+  background-color: #2d2d30;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #3e3e42;
+  overflow-x: auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  height: 100%;
+  background-color: #2d2d30;
+  border-right: 1px solid #3e3e42;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  color: #969696;
+  min-width: 120px;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  background-color: #1e1e1e;
+  color: #cccccc;
+}
+
+.tab.active {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-bottom: 2px solid #007acc;
+}
+
+.tab-icon {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.tab-name {
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.tab-close {
+  font-size: 16px;
+  color: #969696;
+  transition: all 0.2s ease;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.tab-close:hover {
+  color: #ffffff;
+  background-color: #e81123;
+}
+
+/* Editor Content */
+.editor-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.tab-content {
+  display: none;
+  height: 100%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Markdown Content */
+.markdown-content h1 {
+  color: #4fc1ff;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(79, 193, 255, 0.3);
+}
+
+.markdown-content h2 {
+  color: #4fc1ff;
+  font-size: 22px;
+  margin: 20px 0 15px 0;
+  font-weight: 500;
+}
+
+.markdown-content h3 {
+  color: #4fc1ff;
+  font-size: 18px;
+  margin: 15px 0 10px 0;
+  font-weight: 500;
+}
+
+.markdown-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #d4d4d4;
+}
+
+.markdown-content ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.markdown-content li {
+  margin-bottom: 5px;
+  color: #d4d4d4;
+  position: relative;
+}
+
+.markdown-content li::before {
+  content: "▶";
+  color: #007acc;
+  margin-right: 8px;
+  font-size: 10px;
+}
+
+.profile-section {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #252526 0%, #2d2d30 100%);
+  border-radius: 10px;
+  border: 1px solid #3e3e42;
+}
+
+.profile-image {
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007acc;
+  box-shadow: 0 0 20px rgba(0, 122, 204, 0.3);
+  transition: all 0.3s ease;
+}
+
+.profile-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 122, 204, 0.5);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+/* Code Content */
+.code-content {
+  display: flex;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #3e3e42;
+}
+
+.line-numbers {
+  background-color: #252526;
+  color: #858585;
+  padding: 15px 15px 15px 10px;
+  text-align: right;
+  user-select: none;
+  border-right: 1px solid #3e3e42;
+  min-width: 50px;
+}
+
+.line-numbers span {
+  display: block;
+  height: 21px;
+  transition: color 0.2s ease;
+}
+
+.line-numbers span:hover {
+  color: #cccccc;
+}
+
+.code-text {
+  flex: 1;
+  padding: 15px;
+  color: #d4d4d4;
+}
+
+/* Syntax Highlighting */
+.keyword {
+  color: #569cd6;
+  font-weight: 500;
+}
+
+.variable {
+  color: #9cdcfe;
+}
+
+.property {
+  color: #9cdcfe;
+}
+
+.string {
+  color: #ce9178;
+}
+
+.tag {
+  color: #569cd6;
+}
+
+.attribute {
+  color: #92c5f8;
+}
+
+.selector {
+  color: #d7ba7d;
+  font-weight: 500;
+}
+
+.value {
+  color: #ce9178;
+}
+
+.comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* Terminal Resize Bar */
+.terminal-resize-bar {
+  height: 4px;
+  background-color: #2d2d30;
+  cursor: ns-resize;
+  border-top: 1px solid #3e3e42;
+  border-bottom: 1px solid #3e3e42;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.terminal-resize-bar:hover {
+  background-color: #007acc;
+}
+
+.terminal-resize-bar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 2px;
+  background-color: #666;
+  border-radius: 1px;
+}
+
+.terminal-resize-bar:hover::before {
+  background-color: #ffffff;
+}
+
+/* Terminal */
+.terminal {
+  height: 200px;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  transition: height 0.3s ease;
+  min-height: 35px;
+}
+
+.terminal.minimized .terminal-content {
+  display: none;
+}
+
+.terminal.maximized {
+  height: 60vh !important;
+}
+
+.terminal-header {
+  height: 35px;
+  background-color: #2d2d30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-bottom: 1px solid #3e3e42;
+  flex-shrink: 0;
+}
+
+.terminal-tabs {
+  display: flex;
+}
+
+.terminal-tab {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  height: 30px;
+  background-color: #1e1e1e;
+  border-radius: 3px 3px 0 0;
+  font-size: 13px;
+  color: #cccccc;
+  gap: 8px;
+  border: 1px solid #3e3e42;
+  border-bottom: none;
+}
+
+.terminal-icon {
+  font-size: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.terminal-control {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  color: #cccccc;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.terminal-control:hover {
+  background-color: #3e3e42;
+  color: #ffffff;
+}
+
+.terminal-control:nth-child(3):hover {
+  background-color: #e81123;
+}
+
+.terminal-content {
+  flex: 1;
+  padding: 10px;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  overflow-y: auto;
+  background-color: #0c0c0c;
+}
+
+.terminal-line {
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.terminal-prompt {
+  color: #4fc1ff;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.terminal-command {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.terminal-output {
+  color: #d4d4d4;
+}
+
+.terminal-cursor {
+  color: #ffffff;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Status Bar */
+.status-bar {
+  height: 22px;
+  background: linear-gradient(90deg, #007acc 0%, #005a9e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #ffffff;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.status-left,
+.status-right {
+  display: flex;
+  gap: 15px;
+}
+
+.status-item {
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.status-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .terminal {
+    height: 150px;
+  }
+
+  .editor-content {
+    padding: 15px;
+  }
+
+  .code-content {
+    font-size: 12px;
+  }
+
+  .markdown-content h1 {
+    font-size: 24px;
+  }
+
+  .markdown-content h2 {
+    font-size: 20px;
+  }
+
+  .markdown-content h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .tab-bar {
+    overflow-x: auto;
+  }
+
+  .tab {
+    min-width: 100px;
+  }
+
+  .profile-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .editor-content {
+    padding: 10px;
+  }
+
+  .line-numbers {
+    padding: 10px 10px 10px 5px;
+    min-width: 40px;
+  }
+
+  .code-text {
+    padding: 10px;
+  }
+
+  .profile-section {
+    padding: 15px;
+  }
+
+  .terminal {
+    height: 120px;
+  }
+
+  .terminal-controls {
+    gap: 3px;
+  }
+
+  .terminal-control {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4f4f4f;
+}
+
+/* Animações suaves */
+.tab,
+.file-item,
+.menu-item,
+.folder-header {
+  transition: all 0.2s ease;
+}
+
+/* Efeitos de hover melhorados */
+.tab:not(.active):hover {
+  color: #cccccc;
+  transform: translateY(-1px);
+}
+
+.file-item:not(.active):hover .file-name {
+  color: #ffffff;
+}
+
+/* Efeitos especiais */
+.markdown-content h1::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #4fc1ff, #007acc);
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+/* Loading animation para tabs */
+.tab-content.loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #007acc, transparent);
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Highlight para código */
+.code-text:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Efeito de glow para elementos ativos */
+.file-item.active,
+.tab.active {
+  box-shadow: 0 0 10px rgba(0, 122, 204, 0.3);
+}
+
+/* Animação para o terminal cursor */
+.terminal-cursor {
+  position: relative;
+}
+
+.terminal-cursor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  animation: blink 1s infinite;
+}
+
+/* Efeito de typing para o terminal */
+.terminal-line.typing .terminal-command {
+  overflow: hidden;
+  border-right: 2px solid #ffffff;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ffffff;
+  }
+}
+
+/* Efeito de seleção no terminal */
+.terminal-content::selection {
+  background-color: #264f78;
+}
+
+.terminal-content *::selection {
+  background-color: #264f78;
+}
+/* Animações para a sidebar */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Melhorias no botão de toggle da sidebar */
+.action-icon {
+  color: #cccccc;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 4px;
+  border-radius: 3px;
+  user-select: none;
+}
+
+.action-icon:hover {
+  color: #ffffff;
+  background-color: #3e3e42;
+  transform: scale(1.1);
+}
+
+.action-icon:active {
+  transform: scale(0.95);
+}
+
+/* Transições suaves para a sidebar */
+.sidebar {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Ajustes para quando a sidebar está escondida */
+.content-area {
+  transition: margin-left 0.3s ease;
+}
+
+/* Efeito de pulsação no botão quando a sidebar está escondida */
+.sidebar-hidden .action-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 122, 204, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 122, 204, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 122, 204, 0);
+  }
+}
+
+/* Melhorias visuais adicionais */
+.sidebar-header {
+  position: relative;
+}
+
+.sidebar-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #007acc, transparent);
+  opacity: 0.5;
+}
+
+/* Tooltip para o botão de toggle */
+.action-icon::before {
+  content: attr(title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2d2d30;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.action-icon:hover::before {
+  opacity: 1;
+}
+
+.close-all-tabs-btn {
+    background-color: transparent;
+    border: none;
+    color: #cccccc;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    margin-right: 10px; /* Ajuste conforme necessário */
+}
+
+.close-all-tabs-btn:hover {
+    color: #ffffff;
+    background-color: #3e3e42;
+    transform: scale(1.1);
+}
+
+.close-all-tabs-btn:active {
+    transform: scale(0.95);
+}

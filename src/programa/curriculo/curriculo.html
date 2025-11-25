@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/32/909/909212.png">
+    <title>Currículo - João Murilo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23007acc' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        header {
+            background: linear-gradient(90deg, #007acc 0%, #005a9e 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .paper {
+            background-color: #f5f5f5;
+            color: #333;
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            box-shadow:
+                0 1px 1px rgba(0, 0, 0, 0.12),
+                0 2px 2px rgba(0, 0, 0, 0.12),
+                0 4px 4px rgba(0, 0, 0, 0.12),
+                0 8px 8px rgba(0, 0, 0, 0.12),
+                0 16px 16px rgba(0, 0, 0, 0.12);
+            position: relative;
+            border-radius: 2px;
+            transform: rotate(-1deg);
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .paper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 0;
+            opacity: 0.8;
+            mix-blend-mode: overlay;
+        }
+
+        .paper-content {
+            position: relative;
+            z-index: 1;
+            transform: rotate(1deg);
+            text-align: center;
+        }
+
+        .paper-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007acc;
+            text-align: center;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .paper-subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .paper-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .download-btn {
+            margin-top: 30px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #0098ff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-btn:hover::after {
+            left: 100%;
+        }
+
+        .paper-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 122, 204, 0.1);
+            transform: rotate(45deg);
+        }
+
+        .decoration-1 {
+            top: -15px;
+            left: -15px;
+        }
+
+        .decoration-2 {
+            bottom: -15px;
+            right: -15px;
+        }
+
+        .paper-clip {
+            position: absolute;
+            top: -10px;
+            right: 30px;
+            width: 30px;
+            height: 60px;
+            border: 3px solid #888;
+            border-radius: 10px 10px 0 0;
+            border-bottom: none;
+            transform: rotate(10deg);
+            z-index: 3;
+        }
+
+        .paper-clip::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 30px;
+            border: 3px solid #888;
+            border-radius: 5px 5px 0 0;
+            border-bottom: none;
+            top: 0;
+            left: 5px;
+        }
+
+        .coffee-stain {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    rgba(139, 69, 19, 0.2) 0%,
+                    rgba(139, 69, 19, 0.1) 70%,
+                    rgba(139, 69, 19, 0) 100%);
+            bottom: 40px;
+            left: 30px;
+            transform: rotate(-5deg);
+            z-index: 0;
+        }
+
+        .tape {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.4);
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(2deg);
+            z-index: 2;
+            opacity: 0.7;
+        }
+
+        .tape::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(90deg,
+                    rgba(0, 0, 0, 0.05) 1px,
+                    transparent 1px);
+            background-size: 5px 5px;
+        }
+
+        footer {
+            background-color: #252526;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #a0a0a0;
+            margin-top: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .paper {
+                padding: 30px 20px;
+                transform: rotate(0);
+            }
+
+            .paper-content {
+                transform: rotate(0);
+            }
+
+            .paper-clip {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Currículo - João Murilo Pereira de Oliveira</h1>
+    </header>
+
+    <div class="container">
+        <div class="paper">
+            <div class="paper-clip"></div>
+            <div class="tape"></div>
+            <div class="paper-decoration decoration-1"></div>
+            <div class="paper-decoration decoration-2"></div>
+            <div class="coffee-stain"></div>
+
+            <div class="paper-content">
+                <h2 class="paper-title">Desenvolvedor Front-End</h2>
+                <p class="paper-subtitle">ReactJS | TypeScript | Node.js</p>
+
+                <div class="paper-description">
+                    <p>Olá! Sou um desenvolvedor Front-End com mais de 1 ano e 4 meses de experiência prática, incluindo
+                        8 meses de estágio em desenvolvimento web. Atuo principalmente com ReactJS e Node.js,
+                        desenvolvendo interfaces dinâmicas, integrações com APIs e aplicações completas.</p>
+
+                    <p>Tenho familiaridade com metodologias ágeis (Daily, Planning, Review/Demo), consumo de APIs REST,
+                        e colaboração em times multidisciplinares. Estou sempre em busca de novos desafios e
+                        oportunidades para expandir meus conhecimentos.</p>
+
+                    <p>Para mais detalhes sobre minha experiência, habilidades e projetos, baixe meu currículo completo
+                        usando o botão abaixo.</p>
+                </div>
+
+                <a href="https://drive.google.com/file/d/1e2aFE_a1jz6sA6r5vQoz_c-KOX3x3CkR/view?usp=sharing"
+                    target="_blank">
+                    <button class="download-btn">Baixar Currículo Completo</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

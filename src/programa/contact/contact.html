@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/32/3059/3059989.png">
+    <title>Contato - João Murilo</title>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Contato - João Murilo Pereira de Oliveira</h1>
+    </header>
+
+    <div class="container">
+        <div class="paper">
+            <div class="paper-clip"></div>
+            <div class="tape"></div>
+            <div class="coffee-stain"></div>
+
+            <div class="paper-content">
+                <h2 class="paper-title">Informações de Contato</h2>
+                <p class="paper-subtitle">Vamos conversar!</p>
+
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-text">Email: <a href="mailto:j.murilo.mobile@gmail.com"
+                                class="contact-link">j.murilo.mobile@gmail.com</a></span>
+                        <button class="copy-btn" onclick="copyToClipboard('j.murilo.mobile@gmail.com')">Copiar</button>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span class="contact-text">Telefone: <a href="tel:+5521985405690" class="contact-link">(21)
+                                98540-5690</a></span>
+                        <button class="copy-btn" onclick="copyToClipboard('(21) 98540-5690')">Copiar</button>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <span class="contact-text">LinkedIn: <a href="https://linkedin.com/in/joaomurilopoo"
+                                target="_blank" class="contact-link">linkedin.com/in/joaomurilopoo</a></span>
+                        <button class="copy-btn"
+                            onclick="copyToClipboard('https://linkedin.com/in/joaomurilopoo')">Copiar</button>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <span class="contact-text">GitHub: <a href="https://github.com/JoaoMuriloPO" target="_blank"
+                                class="contact-link">github.com/JoaoMuriloPO</a></span>
+                        <button class="copy-btn"
+                            onclick="copyToClipboard('https://github.com/JoaoMuriloPO')">Copiar</button>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span class="contact-text">Localização: Rio de Janeiro - RJ</span>
+                        <button class="copy-btn" onclick="copyToClipboard('Rio de Janeiro - RJ')">Copiar</button>
+                    </li>
+                </ul>
+
+                <a href="javascript:history.back()" class="back-btn">Voltar ao Portfólio</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="copiedMessage" class="copied-message">Copiado para a área de transferência!</div>
+
+    <script src="script.js">
+    </script>
+</body>
+
+</html>
