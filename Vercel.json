@@ -3,14 +3,17 @@
     {
       "source": "/",
       "destination": "/src/programa/page/index.html"
-    },
+    }
+  ],
+  "headers": [
     {
-      "source": "/contact",
-      "destination": "/src/programa/contact/contact.html"
-    },
-    {
-      "source": "/curriculo",
-      "destination": "/src/programa/curriculo/curriculo.html"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ]
 }
