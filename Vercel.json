@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/src/programa/page/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/src/programa/contact/contact.html"
+    },
+    {
+      "source": "/curriculo",
+      "destination": "/src/programa/curriculo/curriculo.html"
+    }
+  ]
+}
